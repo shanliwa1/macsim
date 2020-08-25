@@ -186,6 +186,7 @@ private:
   uns8 m_dcache_cycles; /**< L1 cache latency */
   bool m_acc_sim; /**< gpu simulation */
   bool m_igpu_sim; /**< intel gpu simulation */
+  bool m_ptx_sim; /**< PTX simulation */ 
   int m_latency[NUM_UOP_TYPES]; /**< latency map */
   Counter m_cur_core_cycle; /**< current core cycle */
   int m_max_port[max_ALLOCQ]; /**< maximum port */

@@ -1581,13 +1581,13 @@ memory_c::memory_c(macsim_c* simBase) {
   else
     m_num_cpu += *KNOB(KNOB_NUM_SIM_LARGE_CORES);
 
-  if ((KNOB(KNOB_MEDIUM_CORE_TYPE)->getValue() == "ptx")|| 
-    (KNOB(KNOB_LARGE_CORE_TYPE)->getValue() == "igpu" ))
+  if ((KNOB(KNOB_MEDIUM_CORE_TYPE)->getValue() == "ptx") || 
+   (KNOB(KNOB_LARGE_CORE_TYPE)->getValue() == "igpu" ))
     m_num_gpu += *KNOB(KNOB_NUM_SIM_MEDIUM_CORES);
   else
     m_num_cpu += *KNOB(KNOB_NUM_SIM_MEDIUM_CORES);
 
-  if ((KNOB(KNOB_CORE_TYPE)->getValue() == "ptx")|| 
+  if ((KNOB(KNOB_CORE_TYPE)->getValue() == "ptx") || 
     (KNOB(KNOB_LARGE_CORE_TYPE)->getValue() == "igpu" ))
     m_num_gpu += *KNOB(KNOB_NUM_SIM_SMALL_CORES);
   else
