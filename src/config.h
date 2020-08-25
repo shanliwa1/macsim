@@ -44,7 +44,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_banks = *m_simBase->m_knobs->KNOB_L1_SMALL_NUM_BANK;                \
         m_latency = *m_simBase->m_knobs->KNOB_L1_SMALL_LATENCY;               \
         m_bypass = *m_simBase->m_knobs->KNOB_L1_SMALL_BYPASS;                 \
-        m_ptx_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
+        m_acc_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
                       ? true                                                  \
                       : false;                                                \
         m_igpu_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "igpu" \
@@ -59,7 +59,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_banks = *m_simBase->m_knobs->KNOB_L2_SMALL_NUM_BANK;                \
         m_latency = *m_simBase->m_knobs->KNOB_L2_SMALL_LATENCY;               \
         m_bypass = *m_simBase->m_knobs->KNOB_L2_SMALL_BYPASS;                 \
-        m_ptx_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
+        m_acc_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
                       ? true                                                  \
                       : false;                                                \
         m_igpu_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "igpu" \
@@ -73,7 +73,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_line_size = *m_simBase->m_knobs->KNOB_L3_LINE_SIZE;                 \
         m_banks = *m_simBase->m_knobs->KNOB_L3_NUM_BANK;                      \
         m_latency = *m_simBase->m_knobs->KNOB_L3_LATENCY;                     \
-        m_ptx_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
+        m_acc_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
                       ? true                                                  \
                       : false;                                                \
         m_igpu_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "igpu" \
@@ -87,7 +87,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_line_size = *m_simBase->m_knobs->KNOB_LLC_LINE_SIZE;                \
         m_banks = *m_simBase->m_knobs->KNOB_LLC_NUM_BANK;                     \
         m_latency = *m_simBase->m_knobs->KNOB_LLC_LATENCY;                    \
-        m_ptx_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
+        m_acc_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "ptx"   \
                       ? true                                                  \
                       : false;                                                \
         m_igpu_sim = m_simBase->m_knobs->KNOB_CORE_TYPE->getValue() == "igpu" \
@@ -104,7 +104,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_banks = *m_simBase->m_knobs->KNOB_L1_MEDIUM_NUM_BANK;               \
         m_latency = *m_simBase->m_knobs->KNOB_L1_MEDIUM_LATENCY;              \
         m_bypass = *m_simBase->m_knobs->KNOB_L1_MEDIUM_BYPASS;                \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_MEDIUM_CORE_TYPE->getValue() == "ptx"      \
             ? true                                                            \
             : false;                                                          \
@@ -121,7 +121,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_banks = *m_simBase->m_knobs->KNOB_L2_MEDIUM_NUM_BANK;               \
         m_latency = *m_simBase->m_knobs->KNOB_L2_MEDIUM_LATENCY;              \
         m_bypass = *m_simBase->m_knobs->KNOB_L2_MEDIUM_BYPASS;                \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_MEDIUM_CORE_TYPE->getValue() == "ptx"      \
             ? true                                                            \
             : false;                                                          \
@@ -137,7 +137,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_line_size = *m_simBase->m_knobs->KNOB_L3_LINE_SIZE;                 \
         m_banks = *m_simBase->m_knobs->KNOB_L3_NUM_BANK;                      \
         m_latency = *m_simBase->m_knobs->KNOB_L3_LATENCY;                     \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_MEDIUM_CORE_TYPE->getValue() == "ptx"      \
             ? true                                                            \
             : false;                                                          \
@@ -153,7 +153,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_line_size = *m_simBase->m_knobs->KNOB_LLC_LINE_SIZE;                \
         m_banks = *m_simBase->m_knobs->KNOB_LLC_NUM_BANK;                     \
         m_latency = *m_simBase->m_knobs->KNOB_LLC_LATENCY;                    \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_MEDIUM_CORE_TYPE->getValue() == "ptx"      \
             ? true                                                            \
             : false;                                                          \
@@ -172,7 +172,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_banks = *m_simBase->m_knobs->KNOB_L1_LARGE_NUM_BANK;                \
         m_latency = *m_simBase->m_knobs->KNOB_L1_LARGE_LATENCY;               \
         m_bypass = *m_simBase->m_knobs->KNOB_L1_LARGE_BYPASS;                 \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_LARGE_CORE_TYPE->getValue() == "ptx"       \
             ? true                                                            \
             : false;                                                          \
@@ -189,7 +189,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_banks = *m_simBase->m_knobs->KNOB_L2_LARGE_NUM_BANK;                \
         m_latency = *m_simBase->m_knobs->KNOB_L2_LARGE_LATENCY;               \
         m_bypass = *m_simBase->m_knobs->KNOB_L2_LARGE_BYPASS;                 \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_LARGE_CORE_TYPE->getValue() == "ptx"       \
             ? true                                                            \
             : false;                                                          \
@@ -205,7 +205,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_line_size = *m_simBase->m_knobs->KNOB_L3_LINE_SIZE;                 \
         m_banks = *m_simBase->m_knobs->KNOB_L3_NUM_BANK;                      \
         m_latency = *m_simBase->m_knobs->KNOB_L3_LATENCY;                     \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_LARGE_CORE_TYPE->getValue() == "ptx"       \
             ? true                                                            \
             : false;                                                          \
@@ -221,7 +221,7 @@ POSSIBILITY OF SUCH DAMAGE.
         m_line_size = *m_simBase->m_knobs->KNOB_LLC_LINE_SIZE;                \
         m_banks = *m_simBase->m_knobs->KNOB_LLC_NUM_BANK;                     \
         m_latency = *m_simBase->m_knobs->KNOB_LLC_LATENCY;                    \
-        m_ptx_sim =                                                           \
+        m_acc_sim =                                                           \
           m_simBase->m_knobs->KNOB_LARGE_CORE_TYPE->getValue() == "ptx"       \
             ? true                                                            \
             : false;                                                          \
@@ -324,7 +324,7 @@ POSSIBILITY OF SUCH DAMAGE.
       fp_sched_rate = *m_simBase->m_knobs->KNOB_FSCHED_RATE;               \
       simd_sched_rate = *m_simBase->m_knobs->KNOB_SSCHED_RATE;             \
       m_dcache_cycles = *m_simBase->m_knobs->KNOB_L1_SMALL_LATENCY;        \
-      m_ptx_sim =                                                          \
+      m_acc_sim =                                                          \
         static_cast<string>(*m_simBase->m_knobs->KNOB_CORE_TYPE) == "ptx"  \
           ? true                                                           \
           : false;                                                         \
@@ -340,7 +340,7 @@ POSSIBILITY OF SUCH DAMAGE.
       fp_sched_rate = *m_simBase->m_knobs->KNOB_FSCHED_MEDIUM_RATE;        \
       simd_sched_rate = *m_simBase->m_knobs->KNOB_SSCHED_MEDIUM_RATE;      \
       m_dcache_cycles = *m_simBase->m_knobs->KNOB_L1_MEDIUM_LATENCY;       \
-      m_ptx_sim = static_cast<string>(                                     \
+      m_acc_sim = static_cast<string>(                                     \
                     *m_simBase->m_knobs->KNOB_MEDIUM_CORE_TYPE) == "ptx"   \
                     ? true                                                 \
                     : false;                                               \
@@ -356,7 +356,7 @@ POSSIBILITY OF SUCH DAMAGE.
       fp_sched_rate = *m_simBase->m_knobs->KNOB_FSCHED_LARGE_RATE;         \
       simd_sched_rate = *m_simBase->m_knobs->KNOB_SSCHED_LARGE_RATE;       \
       m_dcache_cycles = *m_simBase->m_knobs->KNOB_L1_LARGE_LATENCY;        \
-      m_ptx_sim = static_cast<string>(                                     \
+      m_acc_sim = static_cast<string>(                                     \
                     *m_simBase->m_knobs->KNOB_LARGE_CORE_TYPE) == "ptx"    \
                     ? true                                                 \
                     : false;                                               \

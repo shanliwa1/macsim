@@ -251,7 +251,7 @@ SimpleRouter::handle_link_arrival( int port, LinkData* data )
   //track flit_id of tail flit
                     cout << manifold::kernel::Manifold::NowTicks() << ",p," 
                         << ((HeadFlit*)data->f)->req->m_id << "," 
-                        << ((HeadFlit*)data->f)->req->m_ptx << ","
+                        << ((HeadFlit*)data->f)->req->m_acc << ","
                         << mem_state_copy[((HeadFlit*)data->f)->req->m_state] << ","
                         << mem_req_noc_type_name[((HeadFlit*)data->f)->req->m_msg_type] << ","
                         << node_id << "," << ((HeadFlit*)data->f)->dst_node << ","

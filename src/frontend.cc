@@ -356,7 +356,7 @@ FRONTEND_MODE frontend_c::process_ifetch(unsigned int tid,
 
     // set up initial fetch address
     thread_s *thread = m_core->get_trace_info(tid);
-    if (thread->m_ptx) {
+    if (thread->m_acc) {
       trace_info_gpu_s *prev_trace_info =
         static_cast<trace_info_gpu_s *>(thread->m_prev_trace_info);
       fetch_data->m_MT_scheduler.m_next_fetch_addr =
@@ -712,7 +712,7 @@ bool frontend_c::icache_fill_line(mem_req_s *req) {
   if (m_icache->access_cache(req->m_addr, &line_addr, false, req->m_appl_id) ==
       NULL) {
     m_icache->insert_cache(req->m_addr, &line_addr, &repl_line_addr,
-                           req->m_appl_id, req->m_ptx);
+                           req->m_appl_id, req->m_acc);
     POWER_CORE_EVENT(req->m_core_id, POWER_ICACHE_W);
   }
 

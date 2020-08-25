@@ -545,7 +545,7 @@ void retire_c::update_stats(process_s* process) {
       core->get_core_type() == "ptx") {
     if ((process->m_repeat + 1) == *m_simBase->m_knobs->KNOB_REPEAT_TRACE_N) {
       --m_simBase->m_process_count_without_repeat;
-      STAT_EVENT_N(CYC_COUNT_PTX, CYCLE);
+      STAT_EVENT_N(CYC_COUNT_ACC, CYCLE);
       report("application "
              << process->m_process_id << " terminated "
              << "("
@@ -555,7 +555,7 @@ void retire_c::update_stats(process_s* process) {
   } else {
     if (process->m_repeat == 0) {
       if (core->get_core_type() == "ptx") {
-        STAT_EVENT_N(CYC_COUNT_PTX, CYCLE);
+        STAT_EVENT_N(CYC_COUNT_ACC, CYCLE);
       } else {
         STAT_EVENT_N(CYC_COUNT_X86, CYCLE);
       }
