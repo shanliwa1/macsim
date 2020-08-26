@@ -133,7 +133,7 @@ exec_c::exec_c(EXEC_INTERFACE_PARAMS(), macsim_c* simBase)
   clear_ports();
 
   // latency binding
-  if (m_acc_sim) {
+  if (m_ptx_sim) {
     int latency_array_size = (sizeof uop_latencybinding_init_ptx /
                               sizeof(uop_latencybinding_init_ptx[0]));
 
